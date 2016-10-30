@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="MainController as main">
+		<li ng-repeat="item in main.parentArray">
+    	{{item}}
+    </li>
+	</div>
+
+
+	<script src="js/main.js"></script>
+	<script src="js/main.controller.js"></script>
+	<script src="js/helpers.module.js"></script>
+	<script src="js/dataservice.service.js"></script>
+</body>
+</html>
