@@ -7,7 +7,13 @@
 </head>
 <body>
 	<div ng-controller="MainController as main">
-		<li ng-repeat="item in main.parentArray">
+		<li ng-repeat="item in main.step1">
+    	{{item}}
+    </li>
+    <li ng-repeat="item in main.step2">
+    	{{item}}
+    </li>
+    <li ng-repeat="item in main.step3">
     	{{item}}
     </li>
 	</div>

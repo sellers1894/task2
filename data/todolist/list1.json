@@ -1,9 +1,11 @@
 {
   "testData":{
-  	"firstName": "Joasdf100hn1",
-  "lastName": "Doe",
-  "age": "19",
-  "gender": "M",
-  "todoListUrl": "./some/path"
+  	"list":[
+  			{"name": "Поесть", "time": "8:00"},
+  			{"name": "Поспать", "time": "9:00"},
+  			{"name": "Написать строчку", "time": "15:00"},
+  			{"name": "Поесть", "time": "16:00"}
+  	],
+  "meet": "meet1"
 	}
 }
