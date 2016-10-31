@@ -1,10 +1,10 @@
 {
   "testData":{
   	"list":[
-  			{"name": "Поесть", "time": "8:00"},
-  			{"name": "Поспать", "time": "9:00"},
-  			{"name": "Написать строчку", "time": "15:00"},
-  			{"name": "Поесть", "time": "16:00"}
+  			{"name": "Поесть", "time": "8:00", "fulfill": "true"},
+  			{"name": "Поспать", "time": "9:00", "fulfill": "true"},
+  			{"name": "Написать строчку", "time": "15:00", "fulfill": "false"},
+  			{"name": "Поесть", "time": "16:00", "fulfill": "false"}
   	],
   "meet": "meet1"
 	}

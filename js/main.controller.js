@@ -11,8 +11,8 @@
     // activate();
 
     function activate() {
-      console.log(dataservice.getRandomUser());
-      dataservice.getData('users/kate').then(function(res) {
+      var user = dataservice.getRandomUser();
+      dataservice.getData('users/'+user).then(function(res) {
         vm.step1 = res;
         console.log(vm.step1);
         return dataservice.getData('todolist/'+vm.step1.todoListUrl);

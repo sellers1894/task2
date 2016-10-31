@@ -8,30 +8,59 @@
 </head>
 <body>
 	<div ng-controller="MainController as main">
-    <input type="submit" id="main-btn" value="Кликнуть" ng-click="main.activate()">
+    <input type="submit" id="main-btn" value="Рандомный человек" ng-click="main.activate()">
     <div id="steps">
       <div class="step" id="step1">
-      <h2>Шаг 1</h2>
-        <li ng-repeat="item in main.step1">
-          {{item}}
-        </li>
+      <h2>Человек</h2>
+        <table>
+          <tr>
+            <td>Имя:</td>
+            <td>{{main.step1.firstName}}</td>
+          </tr>
+          <tr>
+            <td>Фамилия:</td>
+            <td>{{main.step1.lastName}}</td>
+          </tr>
+          <tr>
+            <td>Возраст:</td>
+            <td>{{main.step1.age}}</td>
+          </tr>
+          <tr>
+            <td>Пол:</td>
+            <td>{{main.step1.gender}}</td>
+          </tr>
+          <tr>
+            <td>Список дел:</td>
+            <td>{{main.step1.todoListUrl}}</td>
+          </tr>
+        </table>
       </div>
       <div class="step" id="step2">
-      <h2>Шаг 2</h2>
-        <li ng-repeat="item in main.step2">
-          {{item}}
-        </li>
+      <h2>Список дел</h2>
+        <table>
+          <tr ng-repeat="item in main.step2.list">
+            <td>{{item.name}}</td>
+            <td>{{item.time}}</td>
+            <td>{{item.fulfill}}</td>
+          </tr>
+          <tr>
+            <td colspan="2">Список встреч:</td>
+            <td>{{main.step2.meet}}</td>
+          </tr>
+        </table>
       </div>
       <div class="step" id="step3">
-      <h2>Шаг 3</h2>
-        <li ng-repeat="item in main.step3">
-          {{item}}
-        </li>
+      <h2>Список встреч</h2>
+        <table>
+          <tr ng-repeat="item in main.step3.list">
+            <td>{{item.name}}</td>
+            <td>{{item.time}}</td>
+            <td>{{item.fulfill}}</td>
+          </tr>
+        </table>
       </div>
     </div>
 
-    
-    
   </div>
 
   <widget-test test-info="'12345'"
