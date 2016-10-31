@@ -7,11 +7,12 @@
 
   function MainController(dataservice, $q) {
     var vm = this;
-    activate();
+    vm.activate = activate;
+    // activate();
 
     function activate() {
-      console.log('Main Controller activated');
-      dataservice.getData('users/john').then(function(res) {
+      console.log(dataservice.getRandomUser());
+      dataservice.getData('users/kate').then(function(res) {
         vm.step1 = res;
         console.log(vm.step1);
         return dataservice.getData('todolist/'+vm.step1.todoListUrl);

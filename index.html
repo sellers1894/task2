@@ -7,6 +7,7 @@
 </head>
 <body>
 	<div ng-controller="MainController as main">
+    <input type="submit" ng-click="main.activate()">
 		<li ng-repeat="item in main.step1">
     	{{item}}
     </li>
@@ -18,10 +19,17 @@
     </li>
 	</div>
 
+<widget-test test-info="'12345'"
+                   test-data="main.step1">
+      </widget-test>
 
 	<script src="js/main.js"></script>
 	<script src="js/main.controller.js"></script>
-	<script src="js/helpers.module.js"></script>
+  <script src="js/helpers.module.js"></script>
+  <!-- <script src="js/widjets.module.js"></script> -->
+  <!-- <script src="js/widget-test.directive.js"></script> -->
+	<!-- <script src="js/helpers.module.js"></script> -->
+
 	<script src="js/dataservice.service.js"></script>
 </body>
 </html>
