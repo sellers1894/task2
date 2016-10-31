@@ -3,33 +3,48 @@
 <head>
 	<meta charset="UTF-8">
 	<title>AngularJS</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <link rel="stylesheet" href="css/css.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 </head>
 <body>
 	<div ng-controller="MainController as main">
-    <input type="submit" ng-click="main.activate()">
-		<li ng-repeat="item in main.step1">
-    	{{item}}
-    </li>
-    <li ng-repeat="item in main.step2">
-    	{{item}}
-    </li>
-    <li ng-repeat="item in main.step3">
-    	{{item}}
-    </li>
-	</div>
+    <input type="submit" id="main-btn" value="Кликнуть" ng-click="main.activate()">
+    <div id="steps">
+      <div class="step" id="step1">
+      <h2>Шаг 1</h2>
+        <li ng-repeat="item in main.step1">
+          {{item}}
+        </li>
+      </div>
+      <div class="step" id="step2">
+      <h2>Шаг 2</h2>
+        <li ng-repeat="item in main.step2">
+          {{item}}
+        </li>
+      </div>
+      <div class="step" id="step3">
+      <h2>Шаг 3</h2>
+        <li ng-repeat="item in main.step3">
+          {{item}}
+        </li>
+      </div>
+    </div>
 
-<widget-test test-info="'12345'"
-                   test-data="main.step1">
-      </widget-test>
+    
+    
+  </div>
 
-	<script src="js/main.js"></script>
-	<script src="js/main.controller.js"></script>
-  <script src="js/helpers.module.js"></script>
-  <!-- <script src="js/widjets.module.js"></script> -->
-  <!-- <script src="js/widget-test.directive.js"></script> -->
-	<!-- <script src="js/helpers.module.js"></script> -->
+  <widget-test test-info="'12345'"
+  test-data="main.step1">
+</widget-test>
 
-	<script src="js/dataservice.service.js"></script>
+<script src="js/main.js"></script>
+<script src="js/main.controller.js"></script>
+<script src="js/helpers.module.js"></script>
+<!-- <script src="js/widjets.module.js"></script> -->
+<!-- <script src="js/widget-test.directive.js"></script> -->
+<!-- <script src="js/helpers.module.js"></script> -->
+
+<script src="js/dataservice.service.js"></script>
 </body>
 </html>
