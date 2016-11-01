@@ -1,10 +1,10 @@
 {
   "testData":{
     "list":[
-        {"name": "Петров2", "time": "15:00", "fulfill": "true"},
-        {"name": "Сидоров2", "time": "15:20", "fulfill": "false"},
-        {"name": "Иванов2", "time": "15:30", "fulfill": "false"},
-        {"name": "Блабла2", "time": "17:00", "fulfill": "true"}
+        {"name": "Петров2", "time": "15:00", "fulfill": true},
+        {"name": "Сидоров2", "time": "15:20", "fulfill": false},
+        {"name": "Иванов2", "time": "15:30", "fulfill": false},
+        {"name": "Блабла2", "time": "17:00", "fulfill": true}
     ]
   }
 }

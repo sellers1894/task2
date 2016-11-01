@@ -1,11 +1,11 @@
 {
   "testData":{
   	"list":[
-  			{"name": "Проснуться", "time": "6:00", "fulfill": "true"},
-  			{"name": "Отдохнуть", "time": "7:20", "fulfill": "true"},
-  			{"name": "Поспать", "time": "15:00", "fulfill": "true"},
-  			{"name": "Что-то ещё", "time": "20:00", "fulfill": "false"},
-  			{"name": "Сон", "time": "1:00", "fulfill": "false"}
+  			{"name": "Проснуться", "time": "6:00", "fulfill": true},
+  			{"name": "Отдохнуть", "time": "7:20", "fulfill": true},
+  			{"name": "Поспать", "time": "15:00", "fulfill": true},
+  			{"name": "Что-то ещё", "time": "20:00", "fulfill": false},
+  			{"name": "Сон", "time": "1:00", "fulfill": false}
   	],
   "meet": "meet3"
 	}

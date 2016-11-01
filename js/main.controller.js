@@ -8,7 +8,9 @@
   function MainController(dataservice, $q) {
     var vm = this;
     vm.activate = activate;
-    // activate();
+    vm.sort = sort;
+    vm.sortField = undefined;
+    vm.reverse = false;
 
     function activate() {
       var user = dataservice.getRandomUser();
@@ -25,5 +27,22 @@
         console.log(vm.step3);
       });
     }
+
+    function sort(fieldName) {
+      console.log(fieldName);
+      if (vm.sortField === fieldName){
+        vm.reverse = !vm.reverse;
+      }else{
+        vm.sortField = fieldName;
+        vm.reverse = false;
+      }
+    };
   }
 })();
+
+
+angular.module('app').filter('checkfulfill', function() {
+  return function(input) {
+    return (!!input) ? '\u2713' : '\u2718';
+  }
+});

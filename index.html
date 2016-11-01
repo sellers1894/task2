@@ -9,7 +9,6 @@
 <body>
 	<div ng-controller="MainController as main">
     <input type="submit" id="main-btn" value="Рандомный человек" ng-click="main.activate()">
-    <div id="steps">
       <div class="step" id="step1">
       <h2>Человек</h2>
         <table>
@@ -36,12 +35,12 @@
         </table>
       </div>
       <div class="step" id="step2">
-      <h2>Список дел</h2>
+      <h2 ng-click="main.sort('name')" title="Сортировка">Список дел</h2>
         <table>
-          <tr ng-repeat="item in main.step2.list">
+          <tr ng-repeat="item in main.step2.list | orderBy:main.sortField:main.reverse">
             <td>{{item.name}}</td>
             <td>{{item.time}}</td>
-            <td>{{item.fulfill}}</td>
+            <td>{{item.fulfill | checkfulfill}}</td>
           </tr>
           <tr>
             <td colspan="2">Список встреч:</td>
@@ -50,12 +49,12 @@
         </table>
       </div>
       <div class="step" id="step3">
-      <h2>Список встреч</h2>
+      <h2 ng-click="main.sort('name')" title="Сортировка">Список встреч</h2>
         <table>
-          <tr ng-repeat="item in main.step3.list">
+          <tr ng-repeat="item in main.step3.list | orderBy:main.sortField:main.reverse">
             <td>{{item.name}}</td>
             <td>{{item.time}}</td>
-            <td>{{item.fulfill}}</td>
+            <td>{{item.fulfill | checkfulfill}}</td>
           </tr>
         </table>
       </div>
