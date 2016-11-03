@@ -35,10 +35,10 @@
         </table>
       </div>
       <div class="step" id="step2">
-      <h2 ng-click="main.sort('name')" title="Сортировка">Список дел</h2>
+      <h2 ng-click="main.sort('title')" title="Сортировка">Список дел</h2>
         <table>
           <tr ng-repeat="item in main.step2.list | orderBy:main.sortField:main.reverse">
-            <td>{{item.name}}</td>
+            <td>{{item.title}}</td>
             <td>{{item.time}}</td>
             <td>{{item.fulfill | checkfulfill}}</td>
           </tr>
