@@ -1,13 +1,15 @@
-#main-btn{
-	display: block;
-	margin: 0 auto 1em;
-	font-size: 1.2em;
+.btn{
 	color: #838a92;
 	border: 1px solid #a4afba;
 	border-radius: 3px;
 	cursor: pointer;
 }
-#main-btn:hover{
+#main-btn{
+	display: block;
+	margin: 0 auto 1em;
+	font-size: 1.2em;
+}
+.btn:hover{
 	color: #6f99ff;
 	border-color: #6f99ff;
 }
@@ -17,19 +19,14 @@
 	border-top: 1px solid #e1e1e1;
 }
 .step{
+	margin-bottom: 5px;
 	width: 32%;
+	min-width: 333px;
 	float: left;
 	border: 1px solid #a4afba;
 	border-radius: 3px;
 }
-#step1{
-}
-#step2{
-	margin-left: 1%;
-}
-#step3{
-	margin-left: 1%;
-}
+#step1, #step2{margin-right: 1%;}
 
 .step > h2{
 	margin: 0;

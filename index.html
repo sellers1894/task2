@@ -8,43 +8,45 @@
 </head>
 <body>
 	<div ng-controller="MainController as main">
-    <input type="submit" id="main-btn" value="Рандомный человек" ng-click="main.activate()">
+    <input type="submit" class="btn" id="main-btn" value="Рандомный человек" ng-click="main.activate()">
       <div class="step" id="step1">
       <h2>Человек</h2>
         <table>
           <tr>
             <td>Имя:</td>
-            <td>{{main.step1.firstName}}</td>
+            <td>{{main.user.firstName}}</td>
           </tr>
           <tr>
             <td>Фамилия:</td>
-            <td>{{main.step1.lastName}}</td>
+            <td>{{main.user.lastName}}</td>
           </tr>
           <tr>
             <td>Возраст:</td>
-            <td>{{main.step1.age}}</td>
+            <td>{{main.user.age}}</td>
           </tr>
           <tr>
             <td>Пол:</td>
-            <td>{{main.step1.gender}}</td>
+            <td>{{main.user.gender}}</td>
           </tr>
           <tr>
             <td>Список дел:</td>
-            <td>{{main.step1.todoListUrl}}</td>
+            <td>{{main.user.todoListUrl}}</td>
           </tr>
         </table>
       </div>
       <div class="step" id="step2">
       <h2 ng-click="main.sort('title')" title="Сортировка">Список дел</h2>
         <table>
-          <tr ng-repeat="item in main.step2.list | orderBy:main.sortField:main.reverse">
+          <tr ng-repeat="item in main.todolist.list | orderBy:main.sortField:main.reverse">
             <td>{{item.title}}</td>
             <td>{{item.time}}</td>
             <td>{{item.fulfill | checkfulfill}}</td>
+            <td><input type="submit" class="btn" value="{{item.fulfill? 'Выполнить': 'Не выполнить'}}" ng-click="main.fulfill('todolist', $index)"></td>
+            <td><input type="submit" class="btn" value="Удалить" ng-click="main.deleteItem('todolist', $index)"></td>
           </tr>
           <tr>
             <td colspan="2">Список встреч:</td>
-            <td>{{main.step2.meet}}</td>
+            <td colspan="3">{{main.todolist.meet}}</td>
           </tr>
         </table>
       </div>
@@ -55,6 +57,8 @@
             <td>{{item.name}}</td>
             <td>{{item.time}}</td>
             <td>{{item.fulfill | checkfulfill}}</td>
+            <td><input type="submit" class="btn" value="{{item.fulfill? 'Выполнить': 'Не выполнить'}}" ng-click="main.fulfill('meet', $index)"></td>
+            <td><input type="submit" class="btn" value="Удалить" ng-click="main.deleteItem('meet', $index)"></td>
           </tr>
         </table>
       </div>
@@ -66,13 +70,25 @@
   test-data="main.step1">
 </widget-test>
 
-<script src="js/main.js"></script>
-<script src="js/main.controller.js"></script>
-<script src="js/helpers.module.js"></script>
+<script src="js/module/main.js"></script>
+<script src="js/module/helpers.module.js"></script>
+<script src="js/module/user.module.js"></script>
+<script src="js/module/todolist.module.js"></script>
+<script src="js/module/meet.module.js"></script>
+
+<script src="js/value/user.value.js"></script>
+<script src="js/value/todolist.value.js"></script>
+
+<script src="js/controller/main.controller.js"></script>
+<script src="js/controller/todolist.controller.js"></script>
+
+<script src="js/servise/dataservice.service.js"></script>
+
+
+<script src="js/filter/checkfulfill.filter.js"></script>
 <!-- <script src="js/widjets.module.js"></script> -->
 <!-- <script src="js/widget-test.directive.js"></script> -->
 <!-- <script src="js/helpers.module.js"></script> -->
 
-<script src="js/dataservice.service.js"></script>
 </body>
 </html>
