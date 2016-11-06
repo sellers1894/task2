@@ -42,7 +42,7 @@
           <td>{{item.time}}</td>
           <td>{{item.fulfill | checkfulfill}}</td>
           <td>
-            <input type="submit" class="btn" value="{{item.fulfill? 'Выполнить': 'Не выполнить'}}" ng-click="todolist.fulfill($index)">
+            <input type="submit" class="btn" value="{{!item.fulfill? 'Выполнить': 'Не выполнить'}}" ng-click="todolist.fulfill($index)">
           </td>
           <td>
             <input type="submit" class="btn" value="Удалить" ng-click="todolist.deleteItem($index)">
@@ -52,7 +52,26 @@
           <td colspan="2">Список встреч:</td>
           <td colspan="3">{{main.todolist.meet}}</td>
         </tr>
+
       </table>
+
+      <form>
+        <hr>
+        <table>
+          <tr>
+            <td>Название:</td>
+            <td><input type="text" ng-model="todoListNew.title" required></td>
+          </tr>
+          <tr>
+            <td>Время:</td>
+            <td><input type="text" ng-model="todoListNew.time" required ></td>
+          </tr>
+          <tr colspan="2">
+            <td><input class="btn" type="submit" value="Добавить" ng-click="todolist.add(todoListNew)"></td>
+          </tr>
+        </table>
+      </form>
+
     </div>
 
     <div class="step" id="step3" ng-controller="MeetController as meet">
@@ -63,13 +82,30 @@
           <td>{{item.time}}</td>
           <td>{{item.fulfill | checkfulfill}}</td>
           <td>
-            <input type="submit" class="btn" value="{{item.fulfill? 'Выполнить': 'Не выполнить'}}" ng-click="meet.fulfill($index)">
+            <input type="submit" class="btn" value="{{!item.fulfill? 'Выполнить': 'Не выполнить'}}" ng-click="meet.fulfill($index)">
           </td>
           <td>
             <input type="submit" class="btn" value="Удалить" ng-click="meet.deleteItem($index)">
           </td>
         </tr>
       </table>
+
+      <form>
+        <hr>
+        <table>
+          <tr>
+            <td>Имя:</td>
+            <td><input type="text" ng-model="meetNew.name" required></td>
+          </tr>
+          <tr>
+            <td>Время:</td>
+            <td><input type="text" ng-model="meetNew.time" required ></td>
+          </tr>
+          <tr colspan="2">
+            <td><input class="btn" type="submit" value="Добавить" ng-click="meet.add(meetNew)"></td>
+          </tr>
+        </table>
+      </form>
     </div>
   </div>
 

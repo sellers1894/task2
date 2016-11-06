@@ -11,6 +11,7 @@
     var vm = this;
     vm.fulfill = fulfill;
     vm.deleteItem = deleteItem;
+    vm.add = add;
     vm.sort = sort;
     vm.sortField;
     vm.reverse = false;
@@ -31,6 +32,16 @@
       }else{
         vm.sortField = 'title';
         vm.reverse = false;
+      }
+    }
+
+    function add(newList){
+      if (newList !== undefined && newList.title && newList.time){
+        newList.fulfill = false;
+        // console.log(newList);
+        todolistValue.get().list.push(newList);
+        dataservice.setData('todolist.'+userValue.get().todoListUrl, todolistValue.get());
+        console.log(todolistValue.get().list);
       }
     }
   }

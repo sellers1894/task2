@@ -12,6 +12,7 @@
     vm.fulfill = fulfill;
     vm.deleteItem = deleteItem;
     vm.sort = sort;
+    vm.add = add;
     vm.sortField;
     vm.reverse = false;
 
@@ -31,6 +32,14 @@
       }else{
         vm.sortField = 'name';
         vm.reverse = false;
+      }
+    }
+
+    function add(newList){
+      if (newList !== undefined && newList.name && newList.time){
+        newList.fulfill = false;
+        meetValue.get().list.push(newList);
+        dataservice.setData('meet.'+todolistValue.get().meet, meetValue.get());
       }
     }
   }

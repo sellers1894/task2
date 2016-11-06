@@ -24,7 +24,6 @@
       localStorage.setItem("todolistName", JSON.stringify(jsonFiles.todolistName));
       localStorage.setItem("meetName", JSON.stringify(jsonFiles.meetName));
 
-
       setDataArrToLocal(jsonFiles.usersName, 'users');
       setDataArrToLocal(jsonFiles.todolistName, 'todolist');
       setDataArrToLocal(jsonFiles.meetName, 'meet');
