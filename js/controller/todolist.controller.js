@@ -36,7 +36,7 @@
     }
 
     function add(newList){
-      if (newList !== undefined && newList.title && newList.time){
+      if (newList && newList.title && newList.time){
         newList.fulfill = false;
         todolistValue.get().list.push(newList);
         dataservice.setData('todolist.'+userValue.get().todoListUrl, todolistValue.get());

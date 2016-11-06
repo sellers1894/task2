@@ -17,8 +17,5 @@
     function get(){
     	return meet;
     }
-
   }
-
-
 })();

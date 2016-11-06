@@ -17,8 +17,6 @@
     function get(){
     	return todolist;
     }
-
   }
-
 
 })();

@@ -4,7 +4,7 @@
 	.factory('userValue', userValue);
 
   function userValue() {
-  	var user = '1';
+  	var user;
     var service = {
       set: set,
       get: get
@@ -17,8 +17,6 @@
     function get(){
     	return user;
     }
-
   }
-
 
 })();
