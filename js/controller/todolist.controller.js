@@ -37,8 +37,11 @@
 
     function add(newList){
       if (newList && newList.title && newList.time){
-        newList.fulfill = false;
-        todolistValue.get().list.push(newList);
+        todolistValue.get().list.push({
+          title: newList.title,
+          time: newList.time,
+          fulfill: false
+        });
         dataservice.setData('todolist.'+userValue.get().todoListUrl, todolistValue.get());
       }
     }
