@@ -4,43 +4,39 @@
   .module('app.helpers')
   .factory('dataservice', Dataservice);
 
-  Dataservice.$inject = ['$http', '$q']
+  Dataservice.$inject = ['$http', '$q', 'jsonFiles']
 
-  function Dataservice($http, $q) {
-    var usersName = ['john', 'andrey', 'kate'];
-    var todolistName = ['list1', 'list2', 'list3'];
-    var meetName = ['meet1', 'meet2', 'meet3'];
-    var randomUser;
+  function Dataservice($http, $q, jsonFiles) {
+    var randomUserNum;
+
     var service = {
       onLoad: onLoad,
       getDataJSON: getDataJSON,
       getData: getData,
       setData: setData,
       getRandomUser: getRandomUser,
-      getRandomUserNumber
+      getRandomUserNumber: getRandomUserNumber
     };
     return service;
 
     function onLoad(){
-      localStorage.setItem("usersName", JSON.stringify(usersName));
-      localStorage.setItem("todolistName", JSON.stringify(todolistName));
-      localStorage.setItem("meetName", JSON.stringify(meetName));
+      localStorage.setItem("usersName", JSON.stringify(jsonFiles.usersName));
+      localStorage.setItem("todolistName", JSON.stringify(jsonFiles.todolistName));
+      localStorage.setItem("meetName", JSON.stringify(jsonFiles.meetName));
 
 
-      setDataArrToLocal(usersName, 'users');
-      setDataArrToLocal(todolistName, 'todolist');
-      setDataArrToLocal(meetName, 'meet');
-
-      console.log(JSON.parse(localStorage.getItem('users.john')));
+      setDataArrToLocal(jsonFiles.usersName, 'users');
+      setDataArrToLocal(jsonFiles.todolistName, 'todolist');
+      setDataArrToLocal(jsonFiles.meetName, 'meet');
     }
 
     function getRandomUser(){
       var buf = JSON.parse(localStorage.getItem("usersName"));
-      randomUser = Math.floor(Math.random()*buf.length);
-      return usersName[randomUser];
+      randomUserNum = Math.floor(Math.random()*buf.length);
+      return jsonFiles.usersName[randomUserNum];
     }
     function getRandomUserNumber(){
-      return randomUser;
+      return randomUserNum;
     }
 
     function setDataArrToLocal(arrName, type){
@@ -63,8 +59,8 @@
       return deferred.promise;
     }
 
-    function setData(){
-
+    function setData(name, object){
+      localStorage.setItem(name, JSON.stringify(object));
     }
   }
 })();
