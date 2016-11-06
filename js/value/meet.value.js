@@ -1,10 +1,10 @@
 (function(){
 	angular
 	.module('app.helpers')
-	.factory('todolistValue', TodolistValue);
+	.factory('meetValue', meetValue);
 
-  function TodolistValue() {
-  	var todolist;
+  function meetValue() {
+  	var meet;
     var service = {
       set: set,
       get: get
@@ -12,10 +12,10 @@
     return service;
 
     function set(val){
-    	todolist = val;
+    	meet = val;
     }
     function get(){
-    	return todolist;
+    	return meet;
     }
 
   }

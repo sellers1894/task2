@@ -9,65 +9,74 @@
 <body>
 	<div ng-controller="MainController as main">
     <input type="submit" class="btn" id="main-btn" value="Рандомный человек" ng-click="main.activate()">
-      <div class="step" id="step1">
+    <div class="step" id="step1">
       <h2>Человек</h2>
-        <table>
-          <tr>
-            <td>Имя:</td>
-            <td>{{main.user.firstName}}</td>
-          </tr>
-          <tr>
-            <td>Фамилия:</td>
-            <td>{{main.user.lastName}}</td>
-          </tr>
-          <tr>
-            <td>Возраст:</td>
-            <td>{{main.user.age}}</td>
-          </tr>
-          <tr>
-            <td>Пол:</td>
-            <td>{{main.user.gender}}</td>
-          </tr>
-          <tr>
-            <td>Список дел:</td>
-            <td>{{main.user.todoListUrl}}</td>
-          </tr>
-        </table>
-      </div>
-      <div class="step" id="step2">
-      <h2 ng-click="main.sort('title')" title="Сортировка">Список дел</h2>
-        <table>
-          <tr ng-repeat="item in main.todolist.list | orderBy:main.sortField:main.reverse">
-            <td>{{item.title}}</td>
-            <td>{{item.time}}</td>
-            <td>{{item.fulfill | checkfulfill}}</td>
-            <td><input type="submit" class="btn" value="{{item.fulfill? 'Выполнить': 'Не выполнить'}}" ng-click="main.fulfill('todolist', $index)"></td>
-            <td><input type="submit" class="btn" value="Удалить" ng-click="main.deleteItem('todolist', $index)"></td>
-          </tr>
-          <tr>
-            <td colspan="2">Список встреч:</td>
-            <td colspan="3">{{main.todolist.meet}}</td>
-          </tr>
-        </table>
-      </div>
-      <div class="step" id="step3">
-      <h2 ng-click="main.sort('name')" title="Сортировка">Список встреч</h2>
-        <table>
-          <tr ng-repeat="item in main.step3.list | orderBy:main.sortField:main.reverse">
-            <td>{{item.name}}</td>
-            <td>{{item.time}}</td>
-            <td>{{item.fulfill | checkfulfill}}</td>
-            <td><input type="submit" class="btn" value="{{item.fulfill? 'Выполнить': 'Не выполнить'}}" ng-click="main.fulfill('meet', $index)"></td>
-            <td><input type="submit" class="btn" value="Удалить" ng-click="main.deleteItem('meet', $index)"></td>
-          </tr>
-        </table>
-      </div>
+      <table>
+        <tr>
+          <td>Имя:</td>
+          <td>{{main.user.firstName}}</td>
+        </tr>
+        <tr>
+          <td>Фамилия:</td>
+          <td>{{main.user.lastName}}</td>
+        </tr>
+        <tr>
+          <td>Возраст:</td>
+          <td>{{main.user.age}}</td>
+        </tr>
+        <tr>
+          <td>Пол:</td>
+          <td>{{main.user.gender}}</td>
+        </tr>
+        <tr>
+          <td>Список дел:</td>
+          <td>{{main.user.todoListUrl}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="step" id="step2" ng-controller="TodolistController as todolist">
+      <h2 ng-click="todolist.sort()" title="Сортировка">Список дел</h2>
+      <table>
+        <tr ng-repeat="item in main.todolist.list | orderBy:todolist.sortField:todolist.reverse">
+          <td>{{item.title}}</td>
+          <td>{{item.time}}</td>
+          <td>{{item.fulfill | checkfulfill}}</td>
+          <td>
+            <input type="submit" class="btn" value="{{item.fulfill? 'Выполнить': 'Не выполнить'}}" ng-click="todolist.fulfill($index)">
+          </td>
+          <td>
+            <input type="submit" class="btn" value="Удалить" ng-click="todolist.deleteItem($index)">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Список встреч:</td>
+          <td colspan="3">{{main.todolist.meet}}</td>
+        </tr>
+      </table>
     </div>
 
+    <div class="step" id="step3" ng-controller="MeetController as meet">
+      <h2 ng-click="meet.sort()" title="Сортировка">Список встреч</h2>
+      <table>
+        <tr ng-repeat="item in main.meet.list | orderBy:meet.sortField:meet.reverse">
+          <td>{{item.name}}</td>
+          <td>{{item.time}}</td>
+          <td>{{item.fulfill | checkfulfill}}</td>
+          <td>
+            <input type="submit" class="btn" value="{{item.fulfill? 'Выполнить': 'Не выполнить'}}" ng-click="meet.fulfill($index)">
+          </td>
+          <td>
+            <input type="submit" class="btn" value="Удалить" ng-click="meet.deleteItem($index)">
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 
-  <widget-test test-info="'12345'"
-  test-data="main.step1">
+</div>
+
+<widget-test test-info="'12345'"
+test-data="main.step1">
 </widget-test>
 
 <script src="js/module/main.js"></script>
@@ -78,9 +87,11 @@
 
 <script src="js/value/user.value.js"></script>
 <script src="js/value/todolist.value.js"></script>
+<script src="js/value/meet.value.js"></script>
 
 <script src="js/controller/main.controller.js"></script>
 <script src="js/controller/todolist.controller.js"></script>
+<script src="js/controller/meet.controller.js"></script>
 
 <script src="js/servise/dataservice.service.js"></script>
 
