@@ -38,10 +38,8 @@
     function add(newList){
       if (newList !== undefined && newList.title && newList.time){
         newList.fulfill = false;
-        // console.log(newList);
         todolistValue.get().list.push(newList);
         dataservice.setData('todolist.'+userValue.get().todoListUrl, todolistValue.get());
-        console.log(todolistValue.get().list);
       }
     }
   }

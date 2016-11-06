@@ -26,7 +26,7 @@
         </tr>
         <tr>
           <td>Пол:</td>
-          <td>{{main.user.gender}}</td>
+          <td>{{main.user.gender | checkgender}}</td>
         </tr>
         <tr>
           <td>Список дел:</td>
@@ -52,7 +52,6 @@
           <td colspan="2">Список встреч:</td>
           <td colspan="3">{{main.todolist.meet}}</td>
         </tr>
-
       </table>
 
       <form>
@@ -71,7 +70,6 @@
           </tr>
         </table>
       </form>
-
     </div>
 
     <div class="step" id="step3" ng-controller="MeetController as meet">
@@ -109,34 +107,26 @@
     </div>
   </div>
 
-</div>
+  <script src="js/module/main.js"></script>
+  <script src="js/module/helpers.module.js"></script>
+  <script src="js/module/user.module.js"></script>
+  <script src="js/module/todolist.module.js"></script>
+  <script src="js/module/meet.module.js"></script>
 
-<widget-test test-info="'12345'"
-test-data="main.step1">
-</widget-test>
+  <script src="js/value/user.value.js"></script>
+  <script src="js/value/todolist.value.js"></script>
+  <script src="js/value/meet.value.js"></script>
 
-<script src="js/module/main.js"></script>
-<script src="js/module/helpers.module.js"></script>
-<script src="js/module/user.module.js"></script>
-<script src="js/module/todolist.module.js"></script>
-<script src="js/module/meet.module.js"></script>
+  <script src="js/controller/main.controller.js"></script>
+  <script src="js/controller/todolist.controller.js"></script>
+  <script src="js/controller/meet.controller.js"></script>
 
-<script src="js/value/user.value.js"></script>
-<script src="js/value/todolist.value.js"></script>
-<script src="js/value/meet.value.js"></script>
-
-<script src="js/controller/main.controller.js"></script>
-<script src="js/controller/todolist.controller.js"></script>
-<script src="js/controller/meet.controller.js"></script>
-
-<script src="js/constant/jsonfiles.constant.js"></script>
-<script src="js/servise/dataservice.service.js"></script>
+  <script src="js/constant/jsonfiles.constant.js"></script>
+  <script src="js/servise/dataservice.service.js"></script>
 
 
-<script src="js/filter/checkfulfill.filter.js"></script>
-<!-- <script src="js/widjets.module.js"></script> -->
-<!-- <script src="js/widget-test.directive.js"></script> -->
-<!-- <script src="js/helpers.module.js"></script> -->
+  <script src="js/filter/checkfulfill.filter.js"></script>
+  <script src="js/filter/checkgender.filter.js"></script>
 
 </body>
 </html>
