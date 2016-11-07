@@ -1,6 +1,0 @@
-install node.js
-npm install -g bower
-bower install angular-ui-router
-npm install -g liveserver
-npm init -y
-npm install --save-dev
