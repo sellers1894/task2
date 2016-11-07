@@ -8,16 +8,18 @@
   MainController.$inject = ['userValue', 'todolistValue', 'meetValue', '$location', 'dataservice', '$q'];
 
   function MainController(userValue, todolistValue, meetValue, $location, dataservice, $q) {
-    console.log($location.url());
     var vm = this;
     vm.checkUser = checkUser;
     vm.usersName = dataservice.getUserName();
-    vm.currentUserId = 1;
+    vm.currentUserId = dataservice.getCurrentUserId();
 
     dataservice.onLoad();//загрузка из ф-в JSON в localStorage
     checkUser(vm.currentUserId);
 
+
+
     function checkUser() {
+      dataservice.setCurrentUserId(vm.currentUserId);
       var user = dataservice.getUser(vm.currentUserId);
       dataservice.getData('users',user).then(function(res) {
         userValue.set(res);
@@ -28,7 +30,6 @@
       }).then(function(res3){
         meetValue.set(res3);
       });
-      console.log(meetValue.get());
     }
 
 

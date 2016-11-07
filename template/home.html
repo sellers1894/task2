@@ -1,10 +1,12 @@
 <div class="step" ng-controller="MainController as main">
 	<h2>Люди</h2>
-	<p>Текущий пользоваетль: <b><i>{{main.usersName[main.currentUserId]}}</i></b></p>
-	<form>
-		<p ng-repeat="item in main.usersName">
-		<input type="radio" name="id" ng-model="main.currentUserId" ng-value="{{$index}}">{{item}}
-		</p>
-		<input type="submit" class="btn" value="Выбрать" ng-click="main.checkUser()">
-	</form>
+	<div class="wrapper_info">
+		<p>Текущий пользоваетль: <b><i>{{main.usersName[main.currentUserId]}}</i></b></p>
+		<form>
+			<p ng-repeat="item in main.usersName">
+			<input type="radio" name="id" id="user{{$index}}" ng-model="main.currentUserId" ng-value="{{$index}}"><label for="user{{$index}}"> {{item}}</label>
+			</p>
+			<input type="submit" class="btn" value="Выбрать" ng-click="main.checkUser()">
+		</form>
+	</div>
 </div>

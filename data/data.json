@@ -1,9 +1,0 @@
-{
-  "testData":{
-  	"firstName": "John1",
-  "lastName": "Doe",
-  "age": "19",
-  "gender": "M",
-  "todoListUrl": "./some/path"
-	}
-}

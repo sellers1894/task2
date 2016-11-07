@@ -1,25 +1,27 @@
 <div class="step" ng-controller="UserController as user">
 	<h2>Человек</h2>
-	<table>
-		<tr>
-			<td>Имя:</td>
-			<td>{{user.user.firstName}}</td>
-		</tr>
-		<tr>
-			<td>Фамилия:</td>
-			<td>{{user.user.lastName}}</td>
-		</tr>
-		<tr>
-			<td>Возраст:</td>
-			<td>{{user.user.age}}</td>
-		</tr>
-		<tr>
-			<td>Пол:</td>
-			<td>{{user.user.gender | checkgender}}</td>
-		</tr>
-		<tr>
-			<td>Список дел:</td>
-			<td>{{user.user.todoListUrl}}</td>
-		</tr>
-	</table>
+	<div class="wrapper_info">
+		<table>
+			<tr>
+				<td>Имя:</td>
+				<td>{{user.user.firstName}}</td>
+			</tr>
+			<tr>
+				<td>Фамилия:</td>
+				<td>{{user.user.lastName}}</td>
+			</tr>
+			<tr>
+				<td>Возраст:</td>
+				<td>{{user.user.age}}</td>
+			</tr>
+			<tr>
+				<td>Пол:</td>
+				<td>{{user.user.gender | checkgender}}</td>
+			</tr>
+			<tr>
+				<td>Список дел:</td>
+				<td>{{user.user.todoListUrl}}</td>
+			</tr>
+		</table>
+	</div>
 </div>

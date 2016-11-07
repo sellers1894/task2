@@ -4,6 +4,7 @@
 	font-family: Verdana, Geneva, sans-serif;
 }
 body{min-width: 600px;}
+label, input[type='radio']{cursor: pointer;}
 #page_header{
 	background-color: #f2f2f2;
 	border-bottom: solid 1px #a4afba;
@@ -41,10 +42,6 @@ nav > a:hover{
 	padding-top: 1em;
 	border-top: 1px solid #e1e1e1;
 }
-/*ng-view{
-	display: block;
-	margin-left: 35%;
-}*/
 .step{
 	margin: 5px 30%;
 	/*margin-bottom: 5px;*/
@@ -62,5 +59,8 @@ nav > a:hover{
 	border-top: 3px solid #6f99ff;
 	border-bottom: 1px solid #e1e1e1;
 	text-align: center;
-	cursor: pointer;
+}
+
+.wrapper_info{
+	padding: 1em;
 }
