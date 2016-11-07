@@ -41,12 +41,12 @@ nav > a:hover{
 	padding-top: 1em;
 	border-top: 1px solid #e1e1e1;
 }
-ng-view{
+/*ng-view{
 	display: block;
 	margin-left: 35%;
-}
+}*/
 .step{
-	margin: 5px auto;
+	margin: 5px 30%;
 	/*margin-bottom: 5px;*/
 	width: 32%;
 	min-width: 333px;

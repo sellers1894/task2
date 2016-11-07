@@ -2,26 +2,18 @@
 <html lang="en" ng-app="app">
 <head>
   <base href="/">
-	<meta charset="UTF-8">
-	<title>AngularJS</title>
+  <meta charset="UTF-8">
+  <title>AngularJS</title>
   <link rel="stylesheet" href="css/css.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script> -->
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 </head>
 <body>
   <div id="wrapper">
-    <header id="page_header">
-      <nav>
-        <a href="/">Home</a>
-        <a href="/user">User</a>
-        <a href="/todolist">TodoList</a>
-        <a href="/meet">Meet</a>
-      </nav>
-    </header>
-    <main>
-      <ng-view>
-      </ng-view>
-    </main>
+
+  <div ui-view></div>
+
   </div>
 
   <script src="js/module/main.js"></script>

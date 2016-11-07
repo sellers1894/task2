@@ -2,7 +2,7 @@
 
   angular.module('app', [
   // Helpers modules
-  'ngRoute',
+  'ui.router',
   'app.user',
   'app.todolist',
   'app.meet',
