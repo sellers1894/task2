@@ -8,6 +8,7 @@
   TodolistController.$inject = ['userValue', 'todolistValue', '$location', 'dataservice'];
 
   function TodolistController(userValue, todolistValue, $location, dataservice) {
+    console.log($location.url());
     var vm = this;
     vm.fulfill = fulfill;
     vm.deleteItem = deleteItem;

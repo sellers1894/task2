@@ -7,15 +7,14 @@
   Dataservice.$inject = ['$http', '$q', 'jsonFiles']
 
   function Dataservice($http, $q, jsonFiles) {
-    var randomUserNum;
 
     var service = {
       onLoad: onLoad,
       getDataJSON: getDataJSON,
       getData: getData,
       setData: setData,
-      getRandomUser: getRandomUser,
-      getRandomUserNumber: getRandomUserNumber
+      getUser: getUser,
+      getUserName: getUserName
     };
     return service;
 
@@ -29,13 +28,9 @@
       setDataArrToLocal(jsonFiles.meetName, 'meet');
     }
 
-    function getRandomUser(){
+    function getUser(id){
       var buf = JSON.parse(localStorage.getItem("usersName"));
-      randomUserNum = Math.floor(Math.random()*buf.length);
-      return jsonFiles.usersName[randomUserNum];
-    }
-    function getRandomUserNumber(){
-      return randomUserNum;
+      return jsonFiles.usersName[id];
     }
 
     function setDataArrToLocal(arrName, type){
@@ -60,6 +55,10 @@
 
     function setData(name, object){
       localStorage.setItem(name, JSON.stringify(object));
+    }
+
+    function getUserName(){
+      return jsonFiles.usersName;
     }
   }
 })();

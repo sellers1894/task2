@@ -8,6 +8,7 @@
   MeetController.$inject = ['todolistValue', 'meetValue', '$location', 'dataservice'];
 
   function MeetController(todolistValue, meetValue, $location, dataservice) {
+    console.log($location.url());
     var vm = this;
     vm.fulfill = fulfill;
     vm.deleteItem = deleteItem;

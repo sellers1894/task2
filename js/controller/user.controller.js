@@ -8,6 +8,7 @@
   UserController.$inject = ['todolistValue', 'meetValue', '$location', 'dataservice'];
 
   function UserController(todolistValue, meetValue, $location, dataservice) {
+    console.log($location.url());
     var vm = this;
     vm.fulfill = fulfill;
     vm.deleteItem = deleteItem;
