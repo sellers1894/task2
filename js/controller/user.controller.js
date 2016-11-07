@@ -3,11 +3,11 @@
 
   angular
   .module('app.meet')
-  .controller('MeetController', MeetController);
+  .controller('UserController', UserController);
 
-  MeetController.$inject = ['todolistValue', 'meetValue', '$location', 'dataservice'];
+  UserController.$inject = ['todolistValue', 'meetValue', '$location', 'dataservice'];
 
-  function MeetController(todolistValue, meetValue, $location, dataservice) {
+  function UserController(todolistValue, meetValue, $location, dataservice) {
     var vm = this;
     vm.fulfill = fulfill;
     vm.deleteItem = deleteItem;

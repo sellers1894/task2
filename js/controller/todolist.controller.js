@@ -5,9 +5,9 @@
   .module('app.todolist')
   .controller('TodolistController', TodolistController);
 
-  TodolistController.$inject = ['userValue', 'todolistValue', 'dataservice'];
+  TodolistController.$inject = ['userValue', 'todolistValue', '$location', 'dataservice'];
 
-  function TodolistController(userValue, todolistValue, dataservice) {
+  function TodolistController(userValue, todolistValue, $location, dataservice) {
     var vm = this;
     vm.fulfill = fulfill;
     vm.deleteItem = deleteItem;
