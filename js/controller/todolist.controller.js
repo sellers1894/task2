@@ -10,6 +10,7 @@
   function TodolistController(userValue, todolistValue, $location, dataservice) {
     console.log($location.url());
     var vm = this;
+    vm.todolist = todolistValue.get();
     vm.fulfill = fulfill;
     vm.deleteItem = deleteItem;
     vm.add = add;

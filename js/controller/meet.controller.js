@@ -10,6 +10,7 @@
   function MeetController(todolistValue, meetValue, $location, dataservice) {
     console.log($location.url());
     var vm = this;
+    vm.meet = meetValue.get();
     vm.fulfill = fulfill;
     vm.deleteItem = deleteItem;
     vm.sort = sort;
